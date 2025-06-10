@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block contents %}
+    <div class="container">
+        <h1>Commits</h1>
+        <ul>
+            {% for commit in commits %}
+                <li>
+                    <strong>{{ commit.sha }}</strong> by <strong>{{ commit.name }}</strong>
+                    <br>
+                    <small>{{ commit.committed_at }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
